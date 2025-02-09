@@ -5,9 +5,7 @@ const useInfiniteScroll = (callback: () => void) => {
     const windowHeight = window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    
-    // Trigger when user has scrolled past 50% of the page
-    const triggerThreshold = 0.5;
+    const triggerThreshold = 0.6;
     if (windowHeight + scrollTop >= documentHeight * triggerThreshold) {
       callback();
     }

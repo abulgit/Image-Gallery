@@ -48,7 +48,7 @@ function App() {
           <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500"></span>
         </h1>
       </div>
-      <FocusCards photos={photos} />
+      <FocusCards photos={photos} isLoading={isLoading} />
       {isLoading && (
         <div className="text-center text-gray-400 mt-4 pb-4">
           Loading more images...

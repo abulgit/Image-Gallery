@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Card } from './Card';
+import { Skeleton } from './Skeleton';
 
 interface Photo {
   id: string;
@@ -10,9 +11,10 @@ interface Photo {
 
 interface FocusCardsProps {
   photos: Photo[];
+  isLoading?: boolean;
 }
 
-export function FocusCards({ photos }: FocusCardsProps) {
+export function FocusCards({ photos, isLoading = false }: FocusCardsProps) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -25,6 +27,10 @@ export function FocusCards({ photos }: FocusCardsProps) {
           hovered={hovered}
           setHovered={setHovered}
         />
+      ))}
+      
+      {isLoading && Array.from({ length: 15 }).map((_, index) => (
+        <Skeleton key={`skeleton-${index}`} />
       ))}
     </div>
   );

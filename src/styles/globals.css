@@ -3,7 +3,6 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
-/* For users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

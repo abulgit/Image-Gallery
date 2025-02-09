@@ -20,8 +20,7 @@ export const fetchImages = async (page: number, perPage: number = 15): Promise<P
       headers: { Authorization: API_KEY },
       params: { 
         page, 
-        per_page: perPage * 2, // Fetch more images to increase randomness
-        // Generate a random seed for each request
+        per_page: perPage * 2, 
         seed: Math.random().toString(36).substring(7)
       },
     });
@@ -37,7 +36,6 @@ export const fetchImages = async (page: number, perPage: number = 15): Promise<P
       photographer: photo.photographer,
     }));
 
-    // Shuffle the array and take only the required number of items
     return shuffleArray(photos).slice(0, perPage) as Photo[];
 
   } catch (error) {
